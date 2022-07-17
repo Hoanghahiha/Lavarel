@@ -10,9 +10,9 @@ class WebController extends Controller
         return view("about-us");
     }
     public function categoryList(){
-        return view("category\list");
+        return view("student\list");
     }
     public function productList(){
-        return view("product\list");
+        return view("class\list");
     }
 }
