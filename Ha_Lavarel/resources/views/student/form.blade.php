@@ -1,6 +1,6 @@
 @extends("layout")
 @section("main")
-    <div class="content-wrapper" style="min-height: 1299.69px;">
+    <div class="content" style="min-height: 1299.69px;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">

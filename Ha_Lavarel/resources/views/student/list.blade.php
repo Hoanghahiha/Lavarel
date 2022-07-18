@@ -39,17 +39,19 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($student as $item)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$item->sid}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->birthday}}</td>
+                                    <td>{{$item->cid}}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
-
+                        <div>{!! $student->links() !!}</div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">

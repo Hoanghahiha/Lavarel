@@ -37,15 +37,19 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($classes as $item)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$item->cid}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->room}}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
+                        <div style="margin-left: 800px">{!! $classes->links() !!}</div>
+
                     </div>
                     <!-- /.card-body -->
                 </div>

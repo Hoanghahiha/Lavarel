@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\WebController;
+use app\Http\Controllers\ClassController;
+use app\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get("/about",[\App\Http\Controllers\WebController::class,"aboutUs"]);
-Route::get("/studentList",[\App\Http\Controllers\WebController::class,"studentList"]);
-Route::get("/classList",[\App\Http\Controllers\WebController::class,"classList"]);
+Route::get("/studentList",[\App\Http\Controllers\StudentController::class,"studentList"]);
+Route::get("/classList",[\App\Http\Controllers\ClassController::class,"classList"]);
 Route::get("/subjectList",[\App\Http\Controllers\WebController::class,"subjectList"]);
 Route::get("/scoreList",[\App\Http\Controllers\WebController::class,"scoreList"]);
 
