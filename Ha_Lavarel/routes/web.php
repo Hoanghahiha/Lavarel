@@ -20,7 +20,11 @@ Route::get('/', function () {
 });
 Route::get("/about",[\App\Http\Controllers\WebController::class,"aboutUs"]);
 Route::get("/studentList",[\App\Http\Controllers\StudentController::class,"studentList"]);
+Route::get("/studentForm",[\App\Http\Controllers\StudentController::class,"studentForm"]);
+Route::post("/studentForm",[\App\Http\Controllers\StudentController::class,"studentCreate"]);
 Route::get("/classList",[\App\Http\Controllers\ClassController::class,"classList"]);
+Route::get("/classForm",[\App\Http\Controllers\ClassController::class,"classForm"]);
+Route::post("/classForm",[\App\Http\Controllers\ClassController::class,"classCreate"]);
 Route::get("/subjectList",[\App\Http\Controllers\WebController::class,"subjectList"]);
 Route::get("/scoreList",[\App\Http\Controllers\WebController::class,"scoreList"]);
 

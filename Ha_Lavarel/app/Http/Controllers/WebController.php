@@ -10,6 +10,7 @@ class WebController extends Controller
         return view("about-us");
     }
 
+
     public function subjectList(){
         return view("subject\list");
     }
