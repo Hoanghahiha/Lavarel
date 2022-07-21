@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function StudentList(Request $request){
+    public function studentList(Request $request){
         //$classes = Classes::all();
         //$classes = Classes::where("cid",'like','TH1%')->get();
         //$classes = Classes::orderBy("name","asc")->get();

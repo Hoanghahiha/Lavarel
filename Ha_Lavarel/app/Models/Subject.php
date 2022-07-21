@@ -14,8 +14,9 @@ class Subject extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-      "name",
-      "created_at",
-      "updated_at"
+        "sbid",
+        "name",
+        "created_at",
+        "updated_at"
     ];
 }

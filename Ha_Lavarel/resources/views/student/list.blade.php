@@ -45,6 +45,7 @@
                                 <th>Birthday</th>
                                 <th>Class Id</th>
                                 <th>Class Name</th>
+                                <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                             </thead>
@@ -56,6 +57,7 @@
                                     <td>{{$item->birthday}}</td>
                                     <td>{{$item->cid}}</td>
                                     <td>{{$item->classes->name}}</td>
+                                    <td></td>
                                     <td></td>
                                 </tr>
                             @endforeach
