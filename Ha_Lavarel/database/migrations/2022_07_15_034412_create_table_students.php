@@ -14,12 +14,12 @@ class CreateTableStudents extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->string("sid",20)->primary();
+            $table->integer("id")->primary();
             $table->string("name",255);
-            $table->date("birthday")->nullable();
-            $table->string("cid",20);
+            $table->tinyInteger("age");
+            $table->string("address",200);
+            $table->string("telephone",20);
             $table->timestamps();
-            $table->foreign("cid")->references("cid")->on("classes");
         });
     }
 

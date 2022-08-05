@@ -35,14 +35,26 @@
 
     @include("html.aside")
 
-
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 @yield("content-header")
+                @if(session()->has("success"))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                        {{session("success")}}
+                    </div>
+                @endif
+                @if(session()->has("error"))
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                        {{session("error")}}
+                    </div>
+                @endif
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -50,7 +62,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-               @yield("main")
+                @yield("main")
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
@@ -101,5 +113,7 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
+@yield("custom_script")
 </body>
 </html>

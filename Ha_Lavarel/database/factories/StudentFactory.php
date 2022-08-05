@@ -14,12 +14,12 @@ class StudentFactory extends Factory
      */
     public function definition()
     {
-        $classes = Classes::all()->pluck("cid")->toArray();
         return [
-            "sid"=>"SV".$this->faker->randomNumber(),
+            "id"=>"ST".$this->faker->randomNumber(),
             "name"=>$this->faker->firstName,
-            "birthday"=>$this->faker->date('Y-m-d','2005-01-01'),
-            "cid"=>$this->faker->randomElement($classes)
+            "age"=>$this->faker->randomNumber(),
+            "address"=>$this->faker->address,
+            "telephone"=>"0". $this->faker->unique()->randomNumber(9),
         ];
     }
 }

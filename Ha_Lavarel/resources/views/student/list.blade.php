@@ -1,7 +1,7 @@
 @extends("layout")
 @section("content-header")
     <h1>Students List
-        <a href="{{url("/studentForm")}}" class="btn btn-outline-info float-right">
+        <a href="{{url("/admin/studentForm")}}" class="btn btn-outline-info float-right">
             Create Student
         </a>
     </h1>
@@ -11,10 +11,9 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-
                 <div class="card">
                     <div style="margin-top: 10px">
-                        <form class="form-inline ml-3" method="get" action="{{url("/studentList")}}">
+                        <form class="form-inline ml-3" method="get" action="{{url("/admin/studentList")}}">
                             <div class="input-group input-group-sm">
                                 <select style="margin-left: 10px" class="form-control float-right" name="classID">
                                     <option value="">Select Class...</option>
@@ -42,6 +41,7 @@
                             <tr>
                                 <th>Student ID</th>
                                 <th>Name</th>
+                                <th>Image</th>
                                 <th>Birthday</th>
                                 <th>Class Id</th>
                                 <th>Class Name</th>
@@ -54,11 +54,18 @@
                                 <tr>
                                     <td>{{$item->sid}}</td>
                                     <td>{{$item->name}}</td>
+                                    <td><img src="{{$item->getImage()}}" class="img-circle" width="80"/></td>
                                     <td>{{$item->birthday}}</td>
                                     <td>{{$item->cid}}</td>
                                     <td>{{$item->classes->name}}</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><a href="{{url("/admin/studentEdit",['id'=>$item->sid])}}" class="btn btn-outline-info">Edit</a></td>
+                                    <td>
+                                        <form action="{{url("/admin/studentDelete",['student'=>$item->sid])}}" method="post">
+                                            @csrf
+                                            @method("delete")
+                                            <button type="submit" onclick="return confirm('Delete Student {{$item->name}}')" class="btn btn-outline-danger">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

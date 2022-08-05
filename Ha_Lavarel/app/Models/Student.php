@@ -9,13 +9,14 @@ class Student extends Model
 {
     use HasFactory;
     protected $table = 'students';
-    protected $primaryKey = 'sid';
+    protected $primaryKey = 'id';
     protected $keyType = 'string';
     protected $fillable = [
-        'sid',
+        'id',
         'name',
-        'birthday',
-        'cid',
+        'age',
+        'address',
+        'telephone',
         'created_at',
         'updated_at'
     ];
@@ -47,5 +48,11 @@ class Student extends Model
             return $query ->where("birthday",">=",$fromDate);
         }
         return $query;
+    }
+    public function getImage(){
+        if ($this->image){
+            return $this->image;
+        }
+        return 'upload/default.jpeg';
     }
 }
